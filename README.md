@@ -3,7 +3,7 @@
 AI-Pass is a modern, modular AI orchestration platform prototype. This project provides a fully responsive and interactive frontend experience demonstrating a SaaS dashboard, marketplace, application details, and task runner.
 
 ## 🔗 Live Working Link
-**[https://ai-pass-frontend-ziad-demo.loca.lt](https://ai-pass-frontend-ziad-demo.loca.lt)**
+**[https://ai-pass-frontend-ziad-demo.loca.lt](https://ai-pass-liard.vercel.app/)**
 
 *(Note: If prompted by localtunnel, click "Click to Continue" to view the site. This link is served from a secure local tunnel connected to the dev environment).*
 
