@@ -1,8 +1,21 @@
-import { Bell, Search, UserCircle } from "lucide-react"
+import { Bell, Menu, Search, UserCircle } from "lucide-react"
 
-export function Header() {
+interface HeaderProps {
+  onMenuClick: () => void
+}
+
+export function Header({ onMenuClick }: HeaderProps) {
   return (
     <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-x-4 border-b border-zinc-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8 dark:border-zinc-800 dark:bg-zinc-950">
+      <button
+        type="button"
+        className="-m-2.5 p-2.5 text-zinc-700 lg:hidden dark:text-zinc-300"
+        onClick={onMenuClick}
+      >
+        <span className="sr-only">Open sidebar</span>
+        <Menu className="h-6 w-6" aria-hidden="true" />
+      </button>
+
       <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
         <form className="relative flex flex-1" action="#" method="GET">
           <label htmlFor="search-field" className="sr-only">
