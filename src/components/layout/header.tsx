@@ -1,12 +1,15 @@
 import { Bell, Menu, Search, UserCircle } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 interface HeaderProps {
   onMenuClick: () => void
+  isCollapsed?: boolean
+  onCollapse?: () => void
 }
 
-export function Header({ onMenuClick }: HeaderProps) {
+export function Header({ onMenuClick, isCollapsed, onCollapse }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-x-4 border-b border-zinc-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8 dark:border-zinc-800 dark:bg-zinc-950">
+    <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-x-4 border-b border-zinc-200 bg-white/80 backdrop-blur-md px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8 dark:border-zinc-800/50 dark:bg-zinc-950/80">
       <button
         type="button"
         className="-m-2.5 p-2.5 text-zinc-700 lg:hidden dark:text-zinc-300"
@@ -14,6 +17,15 @@ export function Header({ onMenuClick }: HeaderProps) {
       >
         <span className="sr-only">Open sidebar</span>
         <Menu className="h-6 w-6" aria-hidden="true" />
+      </button>
+
+      {/* Sidebar Toggle for Desktop */}
+      <button
+        type="button"
+        onClick={onCollapse}
+        className="hidden lg:flex -m-2.5 p-2.5 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+      >
+        <Menu className="h-6 w-6" />
       </button>
 
       <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
@@ -38,6 +50,7 @@ export function Header({ onMenuClick }: HeaderProps) {
             <span className="sr-only">View notifications</span>
             <Bell className="h-6 w-6" aria-hidden="true" />
           </button>
+          <ThemeToggle />
           <div className="hidden lg:block lg:h-6 lg:w-px lg:bg-zinc-200 dark:lg:bg-zinc-800" aria-hidden="true" />
           <button type="button" className="flex items-center gap-x-2">
             <UserCircle className="h-8 w-8 text-zinc-400" />

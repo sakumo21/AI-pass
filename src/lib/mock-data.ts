@@ -64,3 +64,75 @@ export const MOCK_USAGE_STATS: UsageStats = {
   requestsTotal: 10000,
   creditsRemaining: 5480,
 };
+
+export interface Automation {
+  id: string;
+  name: string;
+  trigger: string;
+  action: string;
+  status: "Active" | "Inactive";
+  lastRun: string;
+}
+
+export const MOCK_AUTOMATIONS: Automation[] = [
+  {
+    id: "auto-1",
+    name: "Invoice to ERP",
+    trigger: "New Invoice in Dropbox",
+    action: "Extract & Upload to SAP",
+    status: "Active",
+    lastRun: "15 mins ago",
+  },
+  {
+    id: "auto-2",
+    name: "Customer Sentiment Alert",
+    trigger: "New Zendesk Ticket",
+    action: "Analyze Sentiment & Notify Slack",
+    status: "Active",
+    lastRun: "2 hours ago",
+  },
+  {
+    id: "auto-3",
+    name: "Weekly Compliance Check",
+    trigger: "Schedule (Every Monday)",
+    action: "Run Compliance AI on /docs",
+    status: "Inactive",
+    lastRun: "5 days ago",
+  },
+];
+
+export interface Agent {
+  id: string;
+  name: string;
+  role: string;
+  skills: string[];
+  status: "Online" | "Idle" | "Busy";
+  avatarColor: string;
+}
+
+export const MOCK_AGENTS: Agent[] = [
+  {
+    id: "agent-1",
+    name: "Finley",
+    role: "Financial Analyst",
+    skills: ["Forecasting", "Tax Compliance", "Anomaly Detection"],
+    status: "Online",
+    avatarColor: "bg-emerald-500",
+  },
+  {
+    id: "agent-2",
+    name: "Nova",
+    role: "HR Specialist",
+    skills: ["Resume Screening", "Interview Prep", "Policy Search"],
+    status: "Busy",
+    avatarColor: "bg-indigo-500",
+  },
+  {
+    id: "agent-3",
+    name: "Atlas",
+    role: "Supply Chain Expert",
+    skills: ["Inventory Prediction", "Vendor Risk", "Logistics Optimization"],
+    status: "Idle",
+    avatarColor: "bg-orange-500",
+  },
+];
