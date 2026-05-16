@@ -33,7 +33,7 @@ export default function MarketplacePage() {
             Marketplace
           </h1>
           <p className="mt-2 text-zinc-500 dark:text-zinc-400">
-            Discover and install AI apps and integrations for your workspace.
+            Discover and install AI apps and integrations for your workspace!
           </p>
         </div>
       </div>
