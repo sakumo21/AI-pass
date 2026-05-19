@@ -42,7 +42,7 @@ export default function WorkspaceDashboard() {
           </Badge>
           <h1 className="text-5xl font-black tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-7xl lg:text-8xl leading-[1.1]">
             Welcome back,<br />
-            <span className="text-gradient">Ziad</span>
+            <span className="text-gradient">John</span>
           </h1>
           <p className="text-xl md:text-2xl text-zinc-500 dark:text-zinc-400 max-w-3xl leading-relaxed">
             Your AI orchestration platform is ready. You have <span className="text-indigo-600 dark:text-indigo-400 font-extrabold">3 active agents</span> monitoring your workflows and <span className="text-indigo-600 dark:text-indigo-400 font-extrabold">12 pending</span> tasks in the queue.
